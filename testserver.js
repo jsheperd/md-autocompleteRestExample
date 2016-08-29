@@ -33,6 +33,7 @@ app.get('/state', function (req, res) {
   if(!req.query.state) {
     res.send("Hali, enter a state, please!");    
   } else {
+    console.log(req.originalUrl);
     var pat = new RegExp('^' + req.query.state, "i");
 
     setTimeout( function() {  
@@ -40,7 +41,7 @@ app.get('/state', function (req, res) {
             return pat.test(item.value); 
           })
         );
-    }, 500);
+    }, 500); // slow down a little
   }
 
 });
