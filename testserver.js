@@ -41,7 +41,7 @@ app.get('/state', function (req, res) {
             return pat.test(item.value); 
           })
         );
-    }, 500); // slow down a little
+    }, 1500); // slow down a little
   }
 
 });
